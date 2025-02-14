@@ -36,7 +36,12 @@ void Scene::Add(GameObject* obj, Coord place)
 	placed_.emplace_back(obj, place);
 }
 
-GameObject& Scene::operator[](int i)
+Scene::PlacedObject& Scene::operator[](int i)
 {
-
+	auto start = placed_.begin();
+	for (int k = 0; k < i; k++)
+	{
+		++start;
+	}
+	return *start;
 }

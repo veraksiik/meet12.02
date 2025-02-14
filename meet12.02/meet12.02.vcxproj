@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClInclude Include="Controller.hpp" />
     <ClInclude Include="Coord.hpp" />
+    <ClInclude Include="Game.hpp" />
     <ClInclude Include="Game_Object.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="Status.hpp" />

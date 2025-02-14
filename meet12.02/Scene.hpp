@@ -7,6 +7,7 @@
 #include "Coord.hpp"
 
 class Scene {
+	class PlacedObject;
 public:
 
 	int Size()const;
@@ -15,7 +16,7 @@ public:
 	int Find(Coord place_object)const;
 	void Remove(int index);
 
-	GameObject& operator[](int i);
+	PlacedObject& operator[](int i);
 
 
 
