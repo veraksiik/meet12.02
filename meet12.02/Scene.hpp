@@ -17,10 +17,18 @@ private:
 		PlacedObject(GameObject* obj, Coord place);
 
 
+		~PlacedObject();
+		PlacedObject(const PlacedObject& other);
+		PlacedObject& operator = (const PlacedObject& other);
+		//правило 3 обеспечивает корректное хранение
+		//и перенос данных в поле obj_
+
+		bool Interractr(const PlacedObject& other)const;
+		
 		Coord Where()const;
 		GameObject* Who()const;
 	private:
-		GameObject *obj;
+		GameObject *obj_;
 		Coord coord_;
 
 	};
