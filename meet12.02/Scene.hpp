@@ -9,6 +9,14 @@
 class Scene {
 public:
 
+	int Size()const;
+	void Add(GameObject* obj, Coord place);
+
+	int Find(Coord place_object)const;
+	void Remove(int index);
+
+	GameObject& operator[](int i);
+
 
 
 private:
@@ -17,9 +25,9 @@ private:
 		PlacedObject(GameObject* obj, Coord place);
 
 
-		~PlacedObject();
-		PlacedObject(const PlacedObject& other);
-		PlacedObject& operator = (const PlacedObject& other);
+		//~PlacedObject();
+		//PlacedObject(const PlacedObject& other);
+		//PlacedObject& operator = (const PlacedObject& other);
 		//правило 3 обеспечивает корректное хранение
 		//и перенос данных в поле obj_
 
@@ -27,11 +35,14 @@ private:
 		
 		Coord Where()const;
 		GameObject* Who()const;
+
+		void SetCoord(Coord new_place);
 	private:
 		GameObject *obj_;
 		Coord coord_;
 
 	};
+	
 	std::list<PlacedObject> placed_;
 };
 
