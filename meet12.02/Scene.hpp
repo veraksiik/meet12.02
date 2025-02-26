@@ -6,6 +6,8 @@
 #include "Game_Object.hpp"
 #include "Coord.hpp"
 
+
+
 class Scene {
 	class PlacedObject;
 public:

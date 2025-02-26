@@ -24,6 +24,7 @@ public:
 
 
 private:
+	bool is_win();
 	Scene scene;
 
 

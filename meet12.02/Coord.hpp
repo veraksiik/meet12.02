@@ -4,6 +4,9 @@
 
 #include <iostream>
 #include <type_traits>
+//
+//
+//
 
 class Coord {
 public:

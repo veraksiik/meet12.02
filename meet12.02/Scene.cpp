@@ -21,6 +21,11 @@ Coord Scene::PlacedObject::Where() const
 	return coord_;
 }
 
+GameObject* Scene::PlacedObject::Who() const
+{
+	return nullptr;
+}
+
 void Scene::PlacedObject::SetCoord(Coord new_place)
 {
 	coord_ = new_place;
@@ -36,6 +41,29 @@ void Scene::Add(GameObject* obj, Coord place)
 	placed_.emplace_back(obj, place);
 }
 
+int Scene::Find(Coord place_object) const
+{
+	int result{};
+	for (auto& i : placed_)
+	{
+		if (i.Where() == place_object) {
+			return result;
+		}
+		result++;
+	}
+	return -1;    
+}
+
+void Scene::Remove(int index)
+{
+	auto victim = placed_.begin();
+	for (size_t i = 0; i < index; i++)
+	{
+		++victim;
+	}
+	placed_.erase(victim);
+}
+
 Scene::PlacedObject& Scene::operator[](int i)
 {
 	auto start = placed_.begin();
@@ -45,3 +73,4 @@ Scene::PlacedObject& Scene::operator[](int i)
 	}
 	return *start;
 }
+

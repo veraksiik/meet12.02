@@ -6,7 +6,8 @@
 
 class Controller {
 
-
+public:
+	virtual Coord make_move(GameObject&) = 0;
 };
 
 

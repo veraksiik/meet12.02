@@ -6,6 +6,7 @@
 #include "Coord.hpp"
 #include "Status.hpp"
 #include "Controller.hpp"
+#include "Action.hpp"
 
 
 
@@ -14,14 +15,14 @@ public:
 	virtual ~GameObject() = default;
 
 	virtual bool IsHarmable()const = 0;
-	virtual bool Action(int tick)const = 0;
+	virtual Action Action(int tick)const = 0;
 	virtual Coord Move() = 0;
 	virtual void Modify(GameObject& obj) = 0;
 	virtual void TakeHarm(int amount) = 0;
 	virtual Status* GetStatus() = 0;
 	virtual void SetController(const Controller* odj) = 0;
 
-private:
+protected:
 	Controller* controller_;
 
 
